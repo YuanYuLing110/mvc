@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TuiguangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AcccessTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccessKeyID" Type="varchar" MaxLength="96" />
+          <Property Name="Path" Type="varchar" MaxLength="1280" />
+          <Property Name="Domain" Type="varchar" MaxLength="1280" />
+          <Property Name="Source" Type="varchar" MaxLength="64" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WeixinID" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="64" />
+          <Property Name="Qudao" Type="varchar" MaxLength="128" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Domain" Type="varchar" MaxLength="128" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="128" />
+          <Property Name="Location" Type="varchar" MaxLength="1280" />
+        </EntityType>
+        <EntityType Name="WeiXin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="128" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Image" Type="varchar" MaxLength="256" />
+          <Property Name="We" Type="bit" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="128" />
+          <Property Name="ViewCount" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WeixinShowTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WeixinID" Type="int" Nullable="false" />
+          <Property Name="UserAgent" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="96" />
+          <Property Name="Source" Type="nvarchar" MaxLength="64" />
+          <Property Name="Domain" Type="varchar" MaxLength="128" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="1280" />
+          <Property Name="Tag" Type="varchar" MaxLength="128" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="TuiguangModelStoreContainer">
+          <EntitySet Name="AcccessTable" EntityType="Self.AcccessTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scan" EntityType="Self.Scan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeiXin" EntityType="Self.WeiXin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeixinShowTrend" EntityType="Self.WeixinShowTrend" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TuiguangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AcccessTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccessKeyID" Type="String" MaxLength="96" FixedLength="false" Unicode="false" />
+          <Property Name="Path" Type="String" MaxLength="1280" FixedLength="false" Unicode="false" />
+          <Property Name="Domain" Type="String" MaxLength="1280" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Scan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WeixinID" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Qudao" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Domain" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tag" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="1280" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WeiXin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="We" Type="Boolean" Nullable="false" />
+          <Property Name="Tag" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ViewCount" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="WeixinShowTrend">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WeixinID" Type="Int32" Nullable="false" />
+          <Property Name="UserAgent" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="96" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Location" Type="String" MaxLength="1280" FixedLength="false" Unicode="false" />
+          <Property Name="Tag" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TuiguangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AcccessTable" EntityType="Self.AcccessTable" />
+          <EntitySet Name="Scan" EntityType="Self.Scan" />
+          <EntitySet Name="WeiXin" EntityType="Self.WeiXin" />
+          <EntitySet Name="WeixinShowTrend" EntityType="Self.WeixinShowTrend" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TuiguangModelStoreContainer" CdmEntityContainer="TuiguangEntities">
+          <EntitySetMapping Name="AcccessTable">
+            <EntityTypeMapping TypeName="TuiguangModel.AcccessTable">
+              <MappingFragment StoreEntitySet="AcccessTable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AccessKeyID" ColumnName="AccessKeyID" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scan">
+            <EntityTypeMapping TypeName="TuiguangModel.Scan">
+              <MappingFragment StoreEntitySet="Scan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WeixinID" ColumnName="WeixinID" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Qudao" ColumnName="Qudao" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeiXin">
+            <EntityTypeMapping TypeName="TuiguangModel.WeiXin">
+              <MappingFragment StoreEntitySet="WeiXin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="We" ColumnName="We" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeixinShowTrend">
+            <EntityTypeMapping TypeName="TuiguangModel.WeixinShowTrend">
+              <MappingFragment StoreEntitySet="WeixinShowTrend">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WeixinID" ColumnName="WeixinID" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

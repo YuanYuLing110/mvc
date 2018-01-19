@@ -45,6 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -201,6 +202,51 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\AcccessTable.cs">
+      <DependentUpon>mk.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ef.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ef.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ef.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ef.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mk.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mk.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mk.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\mk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mk.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Scan.cs">
+      <DependentUpon>mk.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\table_ip.cs">
+      <DependentUpon>ef.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WeiXin.cs">
+      <DependentUpon>mk.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WeixinShowTrend.cs">
+      <DependentUpon>mk.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +286,40 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="DAL\ef.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ef.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\ef.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ef.edmx</DependentUpon>
+      <LastGenOutput>ef.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\ef.edmx.diagram">
+      <DependentUpon>ef.edmx</DependentUpon>
+    </Content>
+    <Content Include="DAL\ef.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ef.edmx</DependentUpon>
+      <LastGenOutput>ef.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="DAL\mk.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mk.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\mk.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mk.edmx</DependentUpon>
+      <LastGenOutput>mk.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\mk.edmx.diagram">
+      <DependentUpon>mk.edmx</DependentUpon>
+    </Content>
+    <Content Include="DAL\mk.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mk.edmx</DependentUpon>
+      <LastGenOutput>mk.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -272,6 +352,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -279,6 +360,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
