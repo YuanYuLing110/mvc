@@ -14,11 +14,11 @@ namespace demo2
             string str = "a c v o e";
 
              System.Text.RegularExpressions.Regex reg=new System.Text.RegularExpressions.Regex("");
-             reg.Replace(" ", new System.Text.RegularExpressions.MatchEvaluator((System.Text.RegularExpressions.Match match) =>
+             reg.Replace(" ", new System.Text.RegularExpressions.MatchEvaluator((System.Text.RegularExpressions.Match match)=>
              {
 
 
              }));
-        }
+        //}
     }
 }
